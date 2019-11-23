@@ -1,15 +1,12 @@
 $max-width: 1200px;
 $gutter: 20px;
 
-<<<<<<< HEAD
 @mixin transitions($property){
     transition: $property 300ms ease-in-out;
 }
 
-=======
 $font-main: "Lora", "Times New Roman", serif;
 $font-heading: "Roboto Mono", "Courier New", monospace;
->>>>>>> b01711f49db7ac0d7668c0de743e81ab8bde5cbd
 
 /* div {
 
