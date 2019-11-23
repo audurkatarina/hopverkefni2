@@ -1,6 +1,11 @@
 $max-width: 1200px;
 $gutter: 20px;
 
+@mixin transitions($property){
+    transition: $property 300ms ease-in-out;
+}
+
+
 /* div {
 
 } */
