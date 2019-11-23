@@ -1,15 +1,25 @@
 $max-width: 1200px;
 $gutter: 20px;
 
-<<<<<<< HEAD
+//Litapalletta
+$black: #000;
+$grey: #999;
+$greyL: #aaa;
+$greyLL: #ccc;
+$sLime: #2d2;
+$green: #1a1;
+$cream: #fcffd2;
+$pink: #cc9694;
+
+
+//hreyfingar
 @mixin transitions($property){
     transition: $property 300ms ease-in-out;
 }
 
-=======
+//letur
 $font-main: "Lora", "Times New Roman", serif;
 $font-heading: "Roboto Mono", "Courier New", monospace;
->>>>>>> b01711f49db7ac0d7668c0de743e81ab8bde5cbd
 
 /* div {
 
