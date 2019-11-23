@@ -11,10 +11,9 @@ $green: #1a1;
 $cream: #fcffd2;
 $pink: #cc9694;
 
-
 //hreyfingar
-@mixin transitions($property){
-    transition: $property 300ms ease-in-out;
+@mixin transitions($property) {
+  transition: $property 300ms ease-in-out;
 }
 
 //letur
