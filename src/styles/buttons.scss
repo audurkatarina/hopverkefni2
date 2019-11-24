@@ -1,0 +1,28 @@
+.buttons {
+  display: flex;
+  justify-content: center;
+  padding: $gutter/2;
+
+  &__button {
+
+    padding: $gutter/2 $gutter;
+    margin: 0 $gutter/2;
+    font-family: $font-heading;
+    font-size: 1em;
+    background-color: $greyL;
+    border: 0;
+    border-radius: $gutter/2;
+    box-shadow: 1px 1px;
+    @include transitions(background-color);
+
+    &:hover {
+      background-color: $greyLL;
+    }
+
+    &__selected {
+      background-color: $sLime;
+    }
+
+  }
+
+}
