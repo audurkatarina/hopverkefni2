@@ -1,16 +1,16 @@
-export default class Header{
-  constructor(){
+export default class Header {
+  constructor() {
     this.container = document.querySelector('.header');
     this.url = './lectures.json';
   }
 
-  setHeader(title, category, image){
+  setHeader(title, category, image) {
     const text = setHeaderText(title, category);
     const protection = setProtection();
     const container = setContainer(image);
   }
 
-  setHeaderText(title, category){
+  setHeaderText(title, category) {
     const cat = createElement('h4', category);
     cat.classList.add('header__category');
     const t = createElement('h1', title);
@@ -23,17 +23,17 @@ export default class Header{
     return tArea;
   }
 
-  setProtection(){
+  setProtection() {
     const protection = createElement('div');
-    protection.classList.add('img--protection')
+    protection.classList.add('img--protection');
     return protection;
   }
 
-  setContainer(img){
+  setContainer(img) {
     const container = createElement('div');
     container.classList.add('header__img');
     container.style.background = `url(${img})`;
-    //container.style.backgroundPosition = '50% 50%';
+    // container.style.backgroundPosition = '50% 50%';
     container.style.backgroundSize = 'cover';
 
     return container;
