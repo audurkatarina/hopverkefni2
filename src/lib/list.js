@@ -5,7 +5,7 @@ import { empty, createImage, createTitle, createThumb } from './helpers'; /* esl
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
-    this.url = '../../lectures.json';
+    this.url = '../lectures.json';
   }
 
   getLectures() {
