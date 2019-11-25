@@ -9,14 +9,14 @@
     margin: 0 $gutter/2;
     font-family: $font-heading;
     font-size: 1em;
-    background-color: $greyL;
+    background-color: $greyLL;
     border: 0;
     border-radius: $gutter/2;
     box-shadow: 1px 1px;
     @include transitions(background-color);
 
     &:hover {
-      background-color: $greyLL;
+      background-color: $greyL;
     }
 
     &__selected {

@@ -20,7 +20,7 @@ export default class Header {
     text.appendChild(t);
     text.classList.add('header__text');
 
-    return tArea;
+    return text;
   }
 
   setProtection() {
