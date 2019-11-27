@@ -23,8 +23,6 @@ export function el(name, text, ...children) {
   return element;
 }
 
-
-
 export function createThumb(slug) {
   const link = el('a');
   link.href = `fyrirlestur.html?slug=${slug}`;

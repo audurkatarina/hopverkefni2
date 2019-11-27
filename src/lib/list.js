@@ -20,7 +20,6 @@ export default class List {
   }
 
   renderItem(item) {
-
     const listCol = el('div');
     listCol.classList.add('list__col');
     listRow.appendChild(listCol);
@@ -33,11 +32,9 @@ export default class List {
 
     const titleElement = createTitle(item.title, item.category);
     thumbContainer.appendChild(titleElement);
-
   }
 
   renderData(data) {
-    
     listRow.classList.add('list__row');
     this.container.appendChild(listRow);
 
