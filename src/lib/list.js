@@ -1,7 +1,5 @@
 import { empty, createImage, createTitle, createThumb } from './helpers'; /* eslint-disable-line */
 
-// const DATA_URL = '/lectures.json';
-
 export default class List {
   constructor() {
     this.container = document.querySelector('.list');
@@ -31,10 +29,6 @@ export default class List {
   }
 
   renderData(data) {
-    /* for (let item of data.lectures) {
-      this.renderItem(item);
-    } */
-
     data.lectures.forEach((item) => {
       this.renderItem(item);
     });
