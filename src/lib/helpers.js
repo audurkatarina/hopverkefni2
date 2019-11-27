@@ -20,7 +20,6 @@ export function el(name, text, ...children) {
       }
     });
   }
-
   return element;
 }
 
@@ -51,4 +50,76 @@ export function createTitle(title, cat) {
   div.appendChild(catElement);
   div.appendChild(titleElement);
   return div;
+}
+
+// Fyrir fyrirlestrasíðu
+
+function createVideo(data) {
+  const iframe = el('iframe');
+  iframe.setAttribute('src', data);
+  // Bæta við attribute og classList
+  return iframe;
+}
+
+function createText(data) {
+  const div = el('div', data);
+  // Bæta við classList
+  return div;
+}
+
+function createQuote(data, attribute) {
+  const quote = el('blockquote');
+  quote.appendChild(document.createTextNode(data));
+  quote.appendChild(document.createTextNode(attribute));
+  // Bæta við classList
+  return quote;
+}
+
+function createLectureImage(data, caption) {
+  const img = el('img');
+  img.setAttribute('src', data);
+  img.setAttribute('alt', caption);
+  // Bæta við classList
+  return img;
+}
+
+function createHeading(data) {
+  const heading = el('h1', data);
+  // Bæta við classList
+  return heading;
+}
+
+function createList(data) {
+  const ul = el('ul');
+  for (let i = 0; i !== data.length; i += 1) {
+    const li = el('li', data[i]);
+    ul.appendChild(li);
+  }
+  // Bæta við classList
+  return ul;
+}
+
+function createCode(data) {
+  const code = el('code', data);
+  // Bæta við classList
+  return code;
+}
+
+export function createContent(type, data) {
+  if (type === 'youtube') {
+    return createVideo(data);
+  } if (type === 'text') {
+    return createText(data);
+  } if (type === 'quote') {
+    return createQuote(data);
+  } if (type === 'image') {
+    return createLectureImage(data);
+  } if (type === 'heading') {
+    return createHeading(data);
+  } if (type === 'list') {
+    return createList(data);
+  } if (type === 'code') {
+    return createCode(data);
+  }
+  throw new Error('Ekki rétt type');
 }
