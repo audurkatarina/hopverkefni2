@@ -23,29 +23,35 @@ export function el(name, text, ...children) {
   return element;
 }
 
+
+
 export function createThumb(slug) {
   const link = el('a');
   link.href = `fyrirlestur.html?slug=${slug}`;
-  // Bæta við classList!!
+  link.classList.add('listItem');
   return link;
 }
 
 export function createImage(path) {
   if (!path) {
-    return el('div');
+    const noImageElement = el('div');
+    noImageElement.classList.add('listItem__noImg');
+    return noImageElement;
   }
   const imageElement = el('img');
   imageElement.src = `../../${path}`;
+  imageElement.classList.add('listItem__mynd');
   return imageElement;
 }
 
 export function createTitle(title, cat) {
   const div = el('div');
-  // Bæta við classList
+  div.classList.add('text');
 
   const catElement = el('h4', cat);
-  // Bæta við classList
+  catElement.classList.add('listItem__cat');
   const titleElement = el('h1', title);
+  titleElement.classList.add('listItem__title');
 
   div.appendChild(catElement);
   div.appendChild(titleElement);
