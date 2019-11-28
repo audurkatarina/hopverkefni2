@@ -19,10 +19,14 @@
       background-color: $greyL;
     }
 
-    &__selected {
-      background-color: $sLime;
-    }
+  }
 
+  &__selected {
+    background-color: $sLime;
+  }
+
+  &__selected.off {
+    background-color: $greyLL;
   }
 
 }
