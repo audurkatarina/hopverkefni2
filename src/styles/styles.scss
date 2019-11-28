@@ -24,7 +24,17 @@ img { /* stylelint-disable-line */
   max-width: 100%;
 }
 
+h4, h1 {
+  font-family: $font-heading;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
 @import "config";
 @import "header";
 @import "buttons";
-@import "listi";
+@import "list";
+@import "fyrirlestur";

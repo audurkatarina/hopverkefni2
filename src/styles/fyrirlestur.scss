@@ -1,0 +1,57 @@
+.fyrirlestur {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+
+    &__row {
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+
+        @media(min-width: 800px) {
+            width: 66%;
+        }
+    }
+
+    &__video {
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+    }
+
+    &__texti {
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+    }
+
+    &__quote{
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+
+    }
+
+    &__mynd{
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+
+    }
+
+    &__heading {
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+
+    }
+
+    &__listi {
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+
+    }
+
+    &__code{
+        margin-bottom: $gutter;
+        margin-top: $gutter;
+
+    }
+}
+

@@ -1,15 +1,19 @@
-import { createContent } from './helpers';
+import { createContent, el } from './helpers';
+const fyrirlesturRow = el('div');
 
 export default class Lecture {
   constructor() {
     this.container = document.querySelector('.fyrirlestur');
+    this.container.classList.add('fyrirlestur');
     this.url = '../lectures.json';
   }
 
   renderLecture(lecture) {
+    fyrirlesturRow.classList.add('fyrirlestur__row');
+    this.container.appendChild(fyrirlesturRow);
     const { content } = lecture;
     content.forEach((item) => {
-      this.container.appendChild(createContent(item.type, item.data));
+      fyrirlesturRow.appendChild(createContent(item.type, item.data));
     });
   }
 
