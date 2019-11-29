@@ -1,5 +1,4 @@
 import { el, createContent } from './helpers';
-import { save, finish } from './storage';
 import Header from './header';
 
 let finished = false;
@@ -22,7 +21,7 @@ export default class Lecture {
     div.classList.add('footer__color');
     e.target.parentElement.insertBefore(div, e.target);
     e.target.remove();
-    finished = true; 
+    finished = true;
   }
 
   renderLecture(lecture) {

@@ -1,77 +1,73 @@
 .fyrirlestur {
-    max-width: 1200px;
-    margin: 0 auto;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+
+  &__row {
     display: flex;
-    justify-content: center;
+    width: 90%;
+    flex-direction: column;
 
-    &__row {
-        display: flex;
-        width: 90%;
-        flex-direction: column;
+    @media (min-width: 800px) {
+      width: 66%;
+    }
+  }
 
-        @media(min-width: 800px) {
-            width: 66%;
-        }
+  &__video {
+    height: 500px;
+    margin: $gutter 0;
+  }
+
+  &__texti {
+    padding: $gutter/2;
+    margin: $gutter 0;
+    font-family: $font-main;
+    line-height: 2;
+  }
+
+  &__p {
+    margin: $gutter 0;
+  }
+
+  &__quote {
+    display: flex;
+    padding: $gutter/2;
+    margin: $gutter 0;
+    flex-direction: column;
+    background-color: $greyLL;
+
+    .data {
+      margin: $gutter/2 0;
     }
 
-    &__video {
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-        height: 500px;
+    .attribute {
+      margin: $gutter/2 0;
+      font-style: italic;
     }
 
-    &__texti {
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-        font-family: $font-main;
-        padding: $gutter/2;
-        line-height: 2;
+  }
+
+  &__mynd {
+    margin: $gutter 0;
+  }
+
+  &__heading {
+    margin: $gutter 0;
+  }
+
+  &__listi {
+    margin: $gutter 0;
+
+    .listiStak {
+      margin: $gutter 0;
     }
+  }
 
-    &__quote {
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-        background-color: $greyLL;
-        padding: $gutter/2;
-        display: flex;
-        flex-direction: column;
-
-        .data {
-            margin: $gutter/2 0;
-        };
-
-        .attribute {
-            margin: $gutter/2 0;
-            font-style: italic;
-        }
-
-    }
-
-    &__mynd{
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-
-    }
-
-    &__heading {
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-    }
-
-    &__listi {
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-
-        .listiStak {
-            margin: $gutter 0;
-        };
-
-    }
-
-    &__code{
-        margin-bottom: $gutter;
-        margin-top: $gutter;
-
-    }
+  &__code {
+    display: block;
+    margin: $gutter 0;
+    font-family: $font-heading;
+    white-space: pre-wrap;
+  }
 }
-
