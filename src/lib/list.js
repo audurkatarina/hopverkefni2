@@ -7,6 +7,7 @@ export default class List {
     this.container = document.querySelector('.list');
     this.container.classList.add('list');
     this.url = './lectures.json';
+    this.finishedLectures = load();
 
     this.htmlButton = document.querySelector('.buttons__HTML');
     this.cssButton = document.querySelector('.buttons__CSS');
@@ -38,7 +39,12 @@ export default class List {
     const imageElement = createImage(item.thumbnail);
     thumbContainer.appendChild(imageElement);
 
-    const titleElement = createBottom(item.title, item.category);
+    let titleElement;
+    if (this.finishedLectures.includes(item.slug)) {
+      titleElement = createBottom(item.title, item.category, 'listItem__checked');
+    } else {
+      titleElement = createBottom(item.title, item.category);
+    }
     thumbContainer.appendChild(titleElement);
   }
 

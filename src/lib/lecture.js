@@ -1,9 +1,6 @@
 import { el, createContent } from './helpers';
 import Header from './header';
 
-let finished = false;
-
-
 const fyrirlesturRow = el('div');
 
 export default class Lecture {
@@ -12,16 +9,29 @@ export default class Lecture {
     this.container = document.querySelector('.fyrirlestur');
     this.container.classList.add('fyrirlestur');
     this.url = './lectures.json';
-    this.finishedButton = document.querySelector('.footer__button');
-    this.finishedButton.addEventListener('click', this.onClick.bind(this));
+
+    this.finishedButton = this.finishL();
+  }
+
+  finishL() {
+    const finishBtn = document.querySelector('.footer__button');
+    finishBtn.addEventListener('click', this.onClick.bind(this));
+    this.checkButton(finishBtn);
+    return finishBtn;
   }
 
   onClick(e) {
-    const div = el('div', '✓ Fyrirlestur kláraður');
-    div.classList.add('footer__color');
-    e.target.parentElement.insertBefore(div, e.target);
-    e.target.remove();
-    finished = true;
+    const slug = this.getSlug();
+    save(slug);
+    this.checkButton(e.target);
+  }
+
+  checkButton(button) {
+    if (finish(this.getSlug())) {
+      const div = el('div', '✓ Fyrirlestur kláraður');
+      div.classList.add('footer__color');
+      button.replaceChild(div, button.firstChild);
+    }
   }
 
   renderLecture(lecture) {
@@ -52,14 +62,14 @@ export default class Lecture {
       });
   }
 
-  load() {
+  getSlug() {
     const qs = new URLSearchParams(window.location.search);
     const slug = qs.get('slug');
+    return slug;
+  }
 
-    if (finished === false) {
-      const div = el('div', 'Klára fyrirlestur');
-      this.finishedButton.appendChild(div);
-    }
+  load() {
+    const slug = this.getSlug();
     this.getLecture(slug);
   }
 }
