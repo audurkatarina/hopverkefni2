@@ -1,8 +1,11 @@
 import { createContent, el } from './helpers';
+import Header from './header';
+
 const fyrirlesturRow = el('div');
 
 export default class Lecture {
   constructor() {
+    this.header = new Header();
     this.container = document.querySelector('.fyrirlestur');
     this.container.classList.add('fyrirlestur');
     this.url = '../lectures.json';
@@ -13,7 +16,7 @@ export default class Lecture {
     this.container.appendChild(fyrirlesturRow);
     const { content } = lecture;
     content.forEach((item) => {
-      fyrirlesturRow.appendChild(createContent(item.type, item.data));
+      fyrirlesturRow.appendChild(createContent(item.type, item.data, item.attribute, item.caption));
     });
   }
 
@@ -30,6 +33,8 @@ export default class Lecture {
         if (!lecture) {
           throw new Error('Villa. Fyrirlestur fannst ekki');
         }
+        const { title, category, image } = lecture;
+        this.header.setHeader(title, category, image);
         this.renderLecture(lecture);
       });
   }

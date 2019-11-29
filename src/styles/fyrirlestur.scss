@@ -17,16 +17,33 @@
     &__video {
         margin-bottom: $gutter;
         margin-top: $gutter;
+        height: 500px;
     }
 
     &__texti {
         margin-bottom: $gutter;
         margin-top: $gutter;
+        font-family: $font-main;
+        padding: $gutter/2;
+        line-height: 2;
     }
 
-    &__quote{
+    &__quote {
         margin-bottom: $gutter;
         margin-top: $gutter;
+        background-color: $greyLL;
+        padding: $gutter/2;
+        display: flex;
+        flex-direction: column;
+
+        .data {
+            margin: $gutter/2 0;
+        };
+
+        .attribute {
+            margin: $gutter/2 0;
+            font-style: italic;
+        }
 
     }
 
@@ -39,12 +56,15 @@
     &__heading {
         margin-bottom: $gutter;
         margin-top: $gutter;
-
     }
 
     &__listi {
         margin-bottom: $gutter;
         margin-top: $gutter;
+
+        .listiStak {
+            margin: $gutter 0;
+        };
 
     }
 
