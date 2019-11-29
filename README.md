@@ -12,13 +12,12 @@ Skipunin npm run rollup tekur saman allan JavaScript kóðann og babel til að t
 
 ## Lýsing á uppsetningu verkefnis
 
-Í rót verkefnisins er html skrá fyrir forsíðu **index.html**. Önnur síða verkefnisins er síðan **fyrirlestur.html** sem hægt er
-að nálgast út **index.html** og öfugt. 
+Í rót verkefnisins er html skrá fyrir forsíðu, þ.e. **index.html**. Önnur síða verkefnisins er síðan **fyrirlestur.html** sem hægt er að nálgast úr **index.html** og öfugt. 
 
-Næst höfum við möppu **dist** sem inniheldur allar þýddu skrár verkefnisins, þ.e. **bundle.js** sem er þýdd út frá JavaScript 
+Næst höfum við möppu **dist** sem inniheldur allar þýddu skrár verkefnisins, þ.e. **bundle.js** sem er þýdd úr JavaScript 
 skrám verkefnisins og **styles.css** sem er þýdd úr skránni **styles.css** sem inniheldur allt útlit verkefnisins.
 
-Því næst erum við með möppuna **src** sem inniheldur skrána **index.js** sem keyrir virkni síðunna **index.html**. Auk þess inniheldur hún möppurnar **lib** og **styles**.
+Því næst erum við með möppuna **src** sem inniheldur skrána **index.js** sem keyrir virkni síðunnar **index.html**. Auk þess inniheldur hún möppurnar **lib** og **styles**.
 
 Í möppunni **lib** er að finna JavaScript skrár sem keyra mismunandi virkni html síðanna tveggja, þ.e.
 - **header.js** sem sér um header á hverri síðu

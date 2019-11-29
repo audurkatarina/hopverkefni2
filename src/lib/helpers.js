@@ -92,7 +92,10 @@ function createVideo(data) {
   const iframe = el('iframe');
   iframe.setAttribute('src', data);
   iframe.classList.add('fyrirlestur__video');
-  return iframe;
+  const videoContainer = el('div');
+  videoContainer.classList.add('fyrirlestur__vContainer');
+  videoContainer.appendChild(iframe);
+  return videoContainer;
 }
 
 function splitText(data) {
