@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    font-family: $font-heading;
+    flex-direction: column;
+    align-items: center;
+
+    &__button {
+        &__hover {
+            cursor: pointer;
+        }
+        border: none;
+        background: none;
+        padding: $gutter/2;
+        margin: $gutter/2;
+        font-size: 1em;
+        color: $black;
+    }
+
+    &__color {
+        color: $sLime;
+    }
+
+    &__index {
+        padding: $gutter/2;
+        margin: $gutter/2;
+        text-decoration: none;
+    }
+
+}

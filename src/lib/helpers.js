@@ -23,6 +23,10 @@ export function el(name, text, ...children) {
   return element;
 }
 
+/*
+** Fyrir forsíðu
+*/
+
 export function createThumb(slug) {
   const link = el('a');
   link.href = `fyrirlestur.html?slug=${slug}`;
@@ -30,6 +34,16 @@ export function createThumb(slug) {
   return link;
 }
 
+export function createCheck(finished) {
+  const check = el('div', '✓');
+  check.classList.add('listItem__check');
+  if (finished) {
+    check.classList.add('listItem__checked');
+  }
+  return check;
+}
+
+// Mynd fyrir thumbnail
 export function createImage(path) {
   if (!path) {
     const noImageElement = el('div');
@@ -42,6 +56,7 @@ export function createImage(path) {
   return imageElement;
 }
 
+// Texti fyrir thumbnail
 export function createTitle(title, cat) {
   const div = el('div');
   div.classList.add('text');
@@ -56,7 +71,21 @@ export function createTitle(title, cat) {
   return div;
 }
 
-// Fyrir fyrirlestrasíðu
+export function createBottom(title, cat, finished) {
+  const bottom = el('div');
+  bottom.classList.add('listItem__bottom');
+
+  const textBox = createTitle(title, cat);
+  const check = createCheck(finished);
+
+  bottom.appendChild(textBox);
+  bottom.appendChild(check);
+  return bottom;
+}
+
+/*
+** Fyrir fyrirlestrasíðu
+*/
 
 function createVideo(data) {
   const iframe = el('iframe');

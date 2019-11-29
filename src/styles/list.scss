@@ -50,9 +50,29 @@
   }
 
   &__cat {
+    font-weight: 400;
+    text-transform: uppercase;
   } 
 
   &__title {
+    padding: $gutter/2;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__check {
+    margin: 0 $gutter;
+    align-self: center;
+    font-size: 3em;
+    color: $sLime;
+    visibility: hidden;
+  }
+
+  &__checked {
+    visibility: visible;
   }
 }
 

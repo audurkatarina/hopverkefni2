@@ -1,4 +1,4 @@
-import { empty, createImage, createTitle, createThumb, el } from './helpers'; /* eslint-disable-line */
+import { empty, createImage, createBottom, createThumb, el } from './helpers'; /* eslint-disable-line */
 const listRow = el('div');
 const cat = Array(3).fill(false);
 
@@ -6,7 +6,7 @@ export default class List {
   constructor() {
     this.container = document.querySelector('.list');
     this.container.classList.add('list');
-    this.url = '../lectures.json';
+    this.url = './lectures.json';
 
     this.htmlButton = document.querySelector('.buttons__HTML');
     this.cssButton = document.querySelector('.buttons__CSS');
@@ -38,7 +38,7 @@ export default class List {
     const imageElement = createImage(item.thumbnail);
     thumbContainer.appendChild(imageElement);
 
-    const titleElement = createTitle(item.title, item.category);
+    const titleElement = createBottom(item.title, item.category);
     thumbContainer.appendChild(titleElement);
   }
 

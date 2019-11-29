@@ -1,9 +1,22 @@
-import { createContent } from './helpers';
+import { el, createContent } from './helpers';
+import { save, finish } from './storage';
+
+let finished = false;
 
 export default class Lecture {
   constructor() {
     this.container = document.querySelector('.fyrirlestur');
-    this.url = '../lectures.json';
+    this.url = './lectures.json';
+    this.finishedButton = document.querySelector('.footer__button');
+    this.finishedButton.addEventListener('click', this.onClick.bind(this));
+  }
+
+  onClick(e) {
+    const div = el('div', '✓ Fyrirlestur kláraður');
+    div.classList.add('footer__color');
+    e.target.parentElement.insertBefore(div, e.target);
+    e.target.remove();
+    finished = true;
   }
 
   renderLecture(lecture) {
@@ -33,6 +46,11 @@ export default class Lecture {
   load() {
     const qs = new URLSearchParams(window.location.search);
     const slug = qs.get('slug');
+
+    if (finished === false) {
+      const div = el('div', 'Klára fyrirlestur');
+      this.finishedButton.appendChild(div);
+    }
     this.getLecture(slug);
   }
 }
