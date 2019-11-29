@@ -166,7 +166,7 @@ export function createContent(type, data, attribute, caption) {
   throw new Error('Ekki rétt type');
 }
 
-//Fyrir header
+// Fyrir header
 
 export function setHeaderText(title, category) {
   const cat = el('h4', category);
