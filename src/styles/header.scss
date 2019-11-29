@@ -1,8 +1,8 @@
 .header {
   max-width: 100%;
+  height: 300px;
   margin-bottom: $gutter/2;
   background-color: $greyL;
-  height: 300px;
 
   &__img {
     height:100%;
@@ -10,10 +10,10 @@
   }
 
   &__img--forsida {
-    background-image: url(../../img/header.jpg);
-    background-position: 50% 50%;
     width: 100%;
     height: 100%;
+    background-image: url(../../img/header.jpg);
+    background-position: 50% 50%;
   }
 
   &__text {
@@ -22,6 +22,5 @@
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    
   }
 }

@@ -95,8 +95,21 @@ function createVideo(data) {
   return iframe;
 }
 
+function splitText(data) {
+  const s = data.split('\n');
+  return s;
+}
+
 function createText(data) {
-  const div = el('div', data);
+  const div = el('div');
+  const p = splitText(data);
+
+  for (let j = 0; j < p.length; j += 1) {
+    const pg = el('p', p[j]);
+    pg.classList.add('fyrirlestur__p');
+    div.appendChild(pg);
+  }
+
   div.classList.add('fyrirlestur__texti');
   return div;
 }
@@ -166,8 +179,7 @@ export function createContent(type, data, attribute, caption) {
   throw new Error('Ekki rétt type');
 }
 
-// Fyrir header
-
+// header
 export function setHeaderText(title, category) {
   const cat = el('h4', category);
   cat.classList.add('header__category');

@@ -1,6 +1,4 @@
 import { empty, createImage, createBottom, createThumb, el } from './helpers'; /* eslint-disable-line */
-import { load } from './storage';
-
 const listRow = el('div');
 const cat = Array(3).fill(false);
 
