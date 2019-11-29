@@ -1,4 +1,5 @@
 import { el, createContent } from './helpers';
+import { save, finish } from './storage'
 import Header from './header';
 
 const fyrirlesturRow = el('div');

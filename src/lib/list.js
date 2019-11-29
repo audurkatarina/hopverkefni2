@@ -1,4 +1,6 @@
 import { empty, createImage, createBottom, createThumb, el } from './helpers'; /* eslint-disable-line */
+import { loadLectures } from './storage';
+
 const listRow = el('div');
 const cat = Array(3).fill(false);
 
@@ -7,7 +9,7 @@ export default class List {
     this.container = document.querySelector('.list');
     this.container.classList.add('list');
     this.url = './lectures.json';
-    this.finishedLectures = load();
+    this.finishedLectures = loadLectures();
 
     this.htmlButton = document.querySelector('.buttons__HTML');
     this.cssButton = document.querySelector('.buttons__CSS');
