@@ -1,4 +1,5 @@
 import { empty, createImage, createBottom, createThumb, el } from './helpers'; /* eslint-disable-line */
+import Header from './header';
 const listRow = el('div');
 const cat = Array(3).fill(false);
 
@@ -15,6 +16,7 @@ export default class List {
     this.htmlButton.addEventListener('click', this.onClickHTML.bind(this));
     this.cssButton.addEventListener('click', this.onClickCSS.bind(this));
     this.jsButton.addEventListener('click', this.onClickJS.bind(this));
+
   }
 
   getLectures() {

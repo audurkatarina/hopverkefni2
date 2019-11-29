@@ -46,8 +46,9 @@ export function createCheck(finished) {
 // Mynd fyrir thumbnail
 export function createImage(path) {
   if (!path) {
-    const noImageElement = el('div');
-    noImageElement.classList.add('listItem__noImg');
+    const noImageElement = el('img');
+    noImageElement.src = '../../img/ljosgrar.png';
+    noImageElement.classList.add('listItem__mynd');
     return noImageElement;
   }
   const imageElement = el('img');
@@ -90,35 +91,42 @@ export function createBottom(title, cat, finished) {
 function createVideo(data) {
   const iframe = el('iframe');
   iframe.setAttribute('src', data);
-  // Bæta við attribute og classList
+  iframe.classList.add('fyrirlestur__video');
   return iframe;
 }
 
 function createText(data) {
   const div = el('div', data);
-  // Bæta við classList
+  div.classList.add('fyrirlestur__texti');
   return div;
 }
 
 function createQuote(data, attribute) {
   const quote = el('blockquote');
-  quote.appendChild(document.createTextNode(data));
-  quote.appendChild(document.createTextNode(attribute));
-  // Bæta við classList
+  const dataElement = el('div', data);
+  dataElement.classList.add('data');
+  quote.appendChild(dataElement);
+  const attElement = el('div', attribute);
+  attElement.classList.add('attribute');
+  quote.appendChild(attElement);
+  quote.classList.add('fyrirlestur__quote');
   return quote;
 }
 
 function createLectureImage(data, caption) {
+  const imgContainer = el('div');
   const img = el('img');
   img.setAttribute('src', data);
+  imgContainer.appendChild(img);
+  imgContainer.appendChild(document.createTextNode(caption));
   img.setAttribute('alt', caption);
-  // Bæta við classList
-  return img;
+  imgContainer.classList.add('fyrirlestur__mynd');
+  return imgContainer;
 }
 
 function createHeading(data) {
   const heading = el('h1', data);
-  // Bæta við classList
+  heading.classList.add('fyrirlestur__heading');
   return heading;
 }
 
@@ -126,27 +134,28 @@ function createList(data) {
   const ul = el('ul');
   for (let i = 0; i !== data.length; i += 1) {
     const li = el('li', data[i]);
+    li.classList.add('listiStak');
     ul.appendChild(li);
   }
-  // Bæta við classList
+  ul.classList.add('fyrirlestur__listi');
   return ul;
 }
 
 function createCode(data) {
   const code = el('code', data);
-  // Bæta við classList
+  code.classList.add('fyrirlestur__code');
   return code;
 }
 
-export function createContent(type, data) {
+export function createContent(type, data, attribute, caption) {
   if (type === 'youtube') {
     return createVideo(data);
   } if (type === 'text') {
     return createText(data);
   } if (type === 'quote') {
-    return createQuote(data);
+    return createQuote(data, attribute);
   } if (type === 'image') {
-    return createLectureImage(data);
+    return createLectureImage(data, caption);
   } if (type === 'heading') {
     return createHeading(data);
   } if (type === 'list') {
@@ -155,4 +164,34 @@ export function createContent(type, data) {
     return createCode(data);
   }
   throw new Error('Ekki rétt type');
+}
+
+//Fyrir header
+
+export function setHeaderText(title, category) {
+  const cat = el('h4', category);
+  cat.classList.add('header__category');
+  const t = el('h1', title);
+  t.classList.add('header__title');
+  const text = el('div');
+  text.appendChild(cat);
+  text.appendChild(t);
+  text.classList.add('header__text');
+
+  return text;
+}
+
+export function setProtection() {
+  const protection = el('div');
+  protection.classList.add('img--protection');
+  return protection;
+}
+
+export function setContainer(img) {
+  const container = el('div');
+  container.classList.add('header__img');
+  container.style.background = `url(${img})`;
+  container.style.backgroundSize = 'cover';
+
+  return container;
 }

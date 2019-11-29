@@ -20,6 +20,10 @@ $pink: #cc9694;
 $font-main: "Lora", "Times New Roman", serif;
 $font-heading: "Roboto Mono", "Courier New", monospace;
 
-/* div {
-
-} */
+.img--protection {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}

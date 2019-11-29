@@ -23,6 +23,10 @@
 
   &__selected {
     background-color: $sLime;
+
+    &:hover {
+      background-color: $green;
+    }
   }
 
   &__selected.off {

@@ -1,11 +1,17 @@
 import { el, createContent } from './helpers';
 import { save, finish } from './storage';
+import Header from './header';
 
 let finished = false;
 
+
+const fyrirlesturRow = el('div');
+
 export default class Lecture {
   constructor() {
+    this.header = new Header();
     this.container = document.querySelector('.fyrirlestur');
+    this.container.classList.add('fyrirlestur');
     this.url = './lectures.json';
     this.finishedButton = document.querySelector('.footer__button');
     this.finishedButton.addEventListener('click', this.onClick.bind(this));
@@ -16,13 +22,15 @@ export default class Lecture {
     div.classList.add('footer__color');
     e.target.parentElement.insertBefore(div, e.target);
     e.target.remove();
-    finished = true;
+    finished = true; 
   }
 
   renderLecture(lecture) {
+    fyrirlesturRow.classList.add('fyrirlestur__row');
+    this.container.appendChild(fyrirlesturRow);
     const { content } = lecture;
     content.forEach((item) => {
-      this.container.appendChild(createContent(item.type, item.data));
+      fyrirlesturRow.appendChild(createContent(item.type, item.data, item.attribute, item.caption));
     });
   }
 
@@ -39,6 +47,8 @@ export default class Lecture {
         if (!lecture) {
           throw new Error('Villa. Fyrirlestur fannst ekki');
         }
+        const { title, category, image } = lecture;
+        this.header.setHeader(title, category, image);
         this.renderLecture(lecture);
       });
   }
