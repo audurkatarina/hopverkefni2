@@ -14,14 +14,26 @@
     }
   }
 
+  &__vContainer {
+    position: relative;
+    height: 0;
+    padding-top: 35px;
+    padding-bottom: 56.25%;
+    margin: $gutter/2 0;
+    overflow: hidden;
+  }
+
   &__video {
-    height: 500px;
-    margin: $gutter 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 
   &__texti {
-    padding: $gutter/2;
-    margin: $gutter 0;
+    padding: 0 $gutter/2;
+    margin: $gutter/2 0;
     font-family: $font-main;
     line-height: 2;
   }
@@ -32,8 +44,8 @@
 
   &__quote {
     display: flex;
-    padding: $gutter/2;
-    margin: $gutter 0;
+    padding: 0 $gutter/2;
+    margin: $gutter/2 0;
     flex-direction: column;
     background-color: $greyLL;
 
@@ -49,15 +61,17 @@
   }
 
   &__mynd {
-    margin: $gutter 0;
+    margin: $gutter/2 0;
   }
 
   &__heading {
-    margin: $gutter 0;
+    padding: 0 $gutter/2;
+    margin: $gutter/2 0;
   }
 
   &__listi {
-    margin: $gutter 0;
+    padding: 0 $gutter/2;
+    margin: $gutter/2 0;
 
     .listiStak {
       margin: $gutter 0;
@@ -66,7 +80,8 @@
 
   &__code {
     display: block;
-    margin: $gutter 0;
+    padding: 0 $gutter/2;
+    margin: $gutter/2 0;
     font-family: $font-heading;
     white-space: pre-wrap;
   }
