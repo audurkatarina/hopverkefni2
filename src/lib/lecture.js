@@ -1,6 +1,6 @@
-import { el, createContent } from './helpers';
-import { save, finish } from './storage'
-import Header from './header';
+import { el, createContent } from './helpers'; /* eslint-disable-line */
+import { save, finish } from './storage' /* eslint-disable-line */
+import Header from './header'; /* eslint-disable-line */
 
 const fyrirlesturRow = el('div');
 

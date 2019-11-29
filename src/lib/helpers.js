@@ -47,12 +47,12 @@ export function createCheck(finished) {
 export function createImage(path) {
   if (!path) {
     const noImageElement = el('img');
-    noImageElement.src = '../../img/ljosgrar.png';
+    noImageElement.src = './img/ljosgrar.png';
     noImageElement.classList.add('listItem__mynd');
     return noImageElement;
   }
   const imageElement = el('img');
-  imageElement.src = `../../${path}`;
+  imageElement.src = `${path}`;
   imageElement.classList.add('listItem__mynd');
   return imageElement;
 }

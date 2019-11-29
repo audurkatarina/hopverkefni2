@@ -1,5 +1,5 @@
 import { empty, createImage, createBottom, createThumb, el } from './helpers'; /* eslint-disable-line */
-import { loadLectures } from './storage';
+import { loadLectures } from './storage'; /* eslint-disable-line */
 
 const listRow = el('div');
 const cat = Array(3).fill(false);

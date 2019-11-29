@@ -1,6 +1,5 @@
-import List from './lib/list';
-// import Header from './lib/header'
-import Lecture from './lib/lecture';
+import List from './lib/list'; /* eslint-disable-line */
+import Lecture from './lib/lecture'; /* eslint-disable-line */
 
 document.addEventListener('DOMContentLoaded', () => {
   const page = document.querySelector('body');
